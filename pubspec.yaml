@@ -30,6 +30,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  go_router:
+  connectivity_plus:
+  bloc:
+  bloc_test:
+  sqflite:
+  get_it:
+  shared_preferences:
+  equatable:
+
 
 
   # The following adds the Cupertino Icons font to your application.
