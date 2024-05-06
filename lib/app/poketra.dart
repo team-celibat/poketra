@@ -5,9 +5,9 @@ class PoketraApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Poketra'),
+    return const MaterialApp(
+      home: Scaffold(
+
       ),
     );
   }
