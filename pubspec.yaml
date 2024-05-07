@@ -35,6 +35,7 @@ dependencies:
   bloc:
   bloc_test:
   sqflite:
+  path:
   get_it:
   shared_preferences:
   equatable:
