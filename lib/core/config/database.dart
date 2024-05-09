@@ -33,17 +33,88 @@ class DatabaseHelper {
                  updated_at TEXT
              )
           ''');
-    await db.execute('');
+    await db.execute('''
+            CREATE TABLE incomes(
+                income_id INTEGER PRIMARY KEY,
+                balance INTEGER DEFAULT 0,
+                created_at TEXT,
+                updated_at TEXT,
+                income_author INTEGER,
+                FOREIGN KEY (income_author) REFERENCES users(user_id) ON DELETE CASCADE 
+            )
+    ''');
+    await db.execute('''
+            CREATE TABLE goals(
+                goal_id INTEGER PRIMARY KEY,
+                goal_amount INTEGER DEFAULT 0,
+                goal_progress INTEGER DEFAULT 0,
+                goal_name TEXT,
+                goal_description TEXT,
+                goal_due_date TEXT,
+                created_at TEXT,
+                updated_at TEXT,
+                income_author INTEGER,
+                FOREIGN KEY (income_author) REFERENCES users(user_id) ON DELETE CASCADE 
+            )
+    ''');
     await db.execute('''
              CREATE TABLE savings(
                  saving_id INTEGER PRIMARY KEY AUTOINCREMENT,
                  saving_title TEXT,
                  saving_amount INTEGER  DEFAULT 0,
                  saving_author INTEGER,
+                 created_at TEXT,
+                 updated_at TEXT,
                  FOREIGN KEY (saving_author) REFERENCES users(user_id) ON DELETE CASCADE 
              )
     ''');
-
+    await db.execute('''
+             CREATE TABLE tags(
+                 tag_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                 tag_designation TEXT,
+                 tag_icon_name TEXT,
+                 tag_saving INTEGER,
+                 created_at TEXT,
+                 updated_at TEXT,
+                 FOREIGN KEY (tag_saving) REFERENCES savings(saving_id) ON DELETE CASCADE 
+             )
+    ''');
+    await db.execute('''
+             CREATE TABLE budgets(
+                 budget_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                 budget_amount INTEGER,
+                 tag_icon_name TEXT,
+                 tag_saving INTEGER,
+                 budget_balance INTEGER DEFAULT 0,
+                 budget_start_date TEXT,
+                 budget_end_date TEXT,
+                 budget_author INTEGER,
+                 created_at TEXT,
+                 updated_at TEXT,
+                 FOREIGN KEY (budget_author) REFERENCES users(user_id) ON DELETE CASCADE 
+             )
+    ''');
+    await db.execute('''
+             CREATE TABLE expenses(
+                 expense_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                 note TEXT,
+                 expense_amount INTEGER,
+                 expense_budget INTEGER,
+                 expense_category INTEGER,
+                 created_at TEXT,
+                 updated_at TEXT,
+                 FOREIGN KEY (expense_budget) REFERENCES budgets(budget_id) ON DELETE CASCADE,
+                 FOREIGN KEY (expense_category) REFERENCES categories(category_id) ON DELETE CASCADE 
+             )
+    ''');
+    await db.execute('''
+             CREATE TABLE categories(
+                 category_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                 category_designation TEXT,
+                 created_at TEXT,
+                 updated_at TEXT,
+             )
+    ''');
   }
 
 }

@@ -6,9 +6,10 @@ class PoketraApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(),
       home: Scaffold(
         appBar: AppBar(
-          title: Title(color: Colors.blue, child: const Text("Poketra"),)
+          title: Title(color: const Color.fromRGBO(252, 255, 119, 1) ,child: const Text("Poketra"),)
         ),
       ),
     );
