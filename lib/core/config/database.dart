@@ -23,7 +23,7 @@ class DatabaseHelper {
   }
   void _onCreate(db, version) async {
     await db.execute('''
-             CREATE TABLE users (
+             CREATE TABLE IF NOT EXISTS users (
                  user_id INTEGER PRIMARY KEY, 
                  username TEXT, email TEXT, 
                  password TEXT, 
@@ -34,7 +34,7 @@ class DatabaseHelper {
              )
           ''');
     await db.execute('''
-            CREATE TABLE incomes(
+            CREATE TABLE IF NOT EXISTS incomes(
                 income_id INTEGER PRIMARY KEY,
                 balance INTEGER DEFAULT 0,
                 created_at TEXT,
@@ -44,7 +44,7 @@ class DatabaseHelper {
             )
     ''');
     await db.execute('''
-            CREATE TABLE goals(
+            CREATE TABLE IF NOT EXISTS goals(
                 goal_id INTEGER PRIMARY KEY,
                 goal_amount INTEGER DEFAULT 0,
                 goal_progress INTEGER DEFAULT 0,
@@ -58,7 +58,7 @@ class DatabaseHelper {
             )
     ''');
     await db.execute('''
-             CREATE TABLE savings(
+             CREATE TABLE IF NOT EXISTS savings(
                  saving_id INTEGER PRIMARY KEY AUTOINCREMENT,
                  saving_title TEXT,
                  saving_amount INTEGER  DEFAULT 0,
@@ -69,7 +69,7 @@ class DatabaseHelper {
              )
     ''');
     await db.execute('''
-             CREATE TABLE tags(
+             CREATE TABLE IF NOT EXISTS tags(
                  tag_id INTEGER PRIMARY KEY AUTOINCREMENT,
                  tag_designation TEXT,
                  tag_icon_name TEXT,
@@ -80,7 +80,7 @@ class DatabaseHelper {
              )
     ''');
     await db.execute('''
-             CREATE TABLE budgets(
+             CREATE TABLE IF NOT EXISTS budgets(
                  budget_id INTEGER PRIMARY KEY AUTOINCREMENT,
                  budget_amount INTEGER,
                  tag_icon_name TEXT,
@@ -95,7 +95,7 @@ class DatabaseHelper {
              )
     ''');
     await db.execute('''
-             CREATE TABLE expenses(
+             CREATE TABLE IF NOT EXISTS expenses(
                  expense_id INTEGER PRIMARY KEY AUTOINCREMENT,
                  note TEXT,
                  expense_amount INTEGER,
@@ -108,7 +108,7 @@ class DatabaseHelper {
              )
     ''');
     await db.execute('''
-             CREATE TABLE categories(
+             CREATE TABLE IF NOT EXISTS categories(
                  category_id INTEGER PRIMARY KEY AUTOINCREMENT,
                  category_designation TEXT,
                  created_at TEXT,
@@ -116,5 +116,21 @@ class DatabaseHelper {
              )
     ''');
   }
+  Future<int?> insert(Map<String, dynamic> row) async {
+    Database? db = await instance.database;
+    return await db?.insert("users", row);
+  }
 
+  // Future<User> getUser(String user, String password) async {
+  //   Database db = await instance.database;
+  //
+  //   final res = await db.rawQuery(
+  //       "SELECT * FROM $table WHERE username = '$user' AND password = '$password'");
+  //
+  //   if (res.isNotEmpty) {
+  //     User user = User.fromMap(res[0]);
+  //     return user;
+  //   }
+  //   return User('', '');
+  // }
 }

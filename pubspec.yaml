@@ -33,6 +33,7 @@ dependencies:
   go_router:
   connectivity_plus:
   bloc:
+  http:
   bloc_test:
   sqflite:
   path:
