@@ -5,6 +5,18 @@ class OnBoardingTopNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      padding: const EdgeInsets.all(0),
+      child: const Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(".Poketra",
+            style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold,fontSize: 35),
+          ),
+          TextButton(onPressed: null, child: Text("skip",style: TextStyle(color: Colors.black54,fontSize: 20),))
+
+        ],
+      )
+    );
   }
 }
