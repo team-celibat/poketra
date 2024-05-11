@@ -13,26 +13,34 @@ class OnBoardingBottomNavigation extends StatelessWidget {
             ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(59)),
               child:SizedBox(
-                width: 40,
-                height: 15,
+                width: 45,
+                height: 20,
                 child: Container(
                   color: Colors.black,
                 ),),
+            ),
+            const SizedBox(
+              width: 10,
+              height: 15,
             ),
             ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(59)),
               child:SizedBox(
                 width: 20,
-                height: 15,
+                height: 20,
                 child: Container(
                   color: Colors.black,
                 ),),
             ),
+            const SizedBox(
+              width: 10,
+              height: 15,
+              ),
             ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(59)),
               child:SizedBox(
                 width: 20,
-                height: 15,
+                height: 20,
                 child: Container(
                   color: Colors.black,
                 ),),
