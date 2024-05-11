@@ -32,6 +32,7 @@ dependencies:
     sdk: flutter
   go_router:
   connectivity_plus:
+  google_fonts:
   bloc:
   http:
   bloc_test:
