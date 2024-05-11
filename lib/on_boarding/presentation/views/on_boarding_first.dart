@@ -19,8 +19,8 @@ class FirstOnBoarding extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   OnBoardingTopNavigation(),
-                  OnBoardingContent()
-                  // OnBoardingBottomNavigation()
+                  OnBoardingContent(),
+                  OnBoardingBottomNavigation()
                 ],
               )
           )
