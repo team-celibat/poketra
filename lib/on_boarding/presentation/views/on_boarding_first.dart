@@ -9,7 +9,11 @@ class FirstOnBoarding extends StatelessWidget {
         decoration: const BoxDecoration(
           color: Color.fromRGBO(255, 255, 119, 1),
         ),
-        child: Container()
+        child: const Column(
+          children: [
+             Text('Andramana ary eh de'),
+          ],
+        )
     );
   }
 }
