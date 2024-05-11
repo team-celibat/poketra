@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:path/path.dart';
 import 'package:poketra/core/constants/index.dart';
 import 'package:poketra/global/widgets/scaffold_with_nested_navigation.dart';
 
