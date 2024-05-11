@@ -14,12 +14,14 @@ class FirstOnBoarding extends StatelessWidget {
             color: Color.fromRGBO(255, 255, 119, 1),
           ),
           child: Container(
-              margin: const EdgeInsets.only(left: 10,top: 50,right: 10,bottom: 50),
+              margin: const EdgeInsets.only(left: 15,top: 60,right: 15,bottom: 60),
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   OnBoardingTopNavigation(),
+                  SizedBox(height: 34,),
                   OnBoardingContent(),
+                  SizedBox(height: 34,),
                   OnBoardingBottomNavigation()
                 ],
               )
