@@ -23,13 +23,14 @@ class AppRouter {
     goRouter = GoRouter(
       debugLogDiagnostics: true,
       navigatorKey: generateKey('root'),
-      initialLocation: RoutePath.onboarding,
+      initialLocation: RoutePath.home,
       routes: [
         GoRoute(
             path: RoutePath.onboarding,
             pageBuilder: (BuildContext context, GoRouterState state) {
               return MaterialPage(
-                  key: state.pageKey, child: const Text('Onboarding screen'));
+                  key: state.pageKey,
+                  child: const Text('Onboarding screen'));
             }),
         GoRoute(
             path: RoutePath.auth,
