@@ -22,7 +22,7 @@ class FirstOnBoarding extends StatelessWidget {
                   children: [
                     const OnBoardingTopNavigation(),
                     SizedBox(height: heightScreen * 0.03,),
-                    const OnBoardingContent(),
+                    const Expanded(child: OnBoardingContent()),
                     SizedBox(height: heightScreen * 0.03,),
                     const OnBoardingBottomNavigation()
                   ],
