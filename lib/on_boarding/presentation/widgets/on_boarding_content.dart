@@ -5,6 +5,8 @@ class OnBoardingContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+      double widthScreen = MediaQuery.of(context).size.width;
+      double heightScreen = MediaQuery.of(context).size.height;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -12,29 +14,32 @@ class OnBoardingContent extends StatelessWidget {
           child: Image.asset(
             'assets/onboardingfirst.png',
             fit: BoxFit.cover,
+            height: heightScreen * 0.3,
             scale: 1,
           ),
         ),
-        const SizedBox(
-          height: 34,
+         SizedBox(
+          height: heightScreen * 0.02,
         ),
-        const Column(
+        Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "Apprener à gérer votre argent intelligement",
-              style:
-                  TextStyle(fontSize: 32, color: Color.fromRGBO(18, 8, 4, 1)),
+            Container(
+              child: Text(
+                "Apprener à gérer votre argent intelligement",
+                style:
+                    TextStyle(fontSize: heightScreen * 0.05 , color: Color.fromRGBO(18, 8, 4, 1)),
+              ),
             ),
             SizedBox(
-              height: 24,
+                height: heightScreen * 0.01
             ),
             Text(
                 "Notre application vous permet de suivre "
                 "vos dépenses et de créer des budgets personnalisés "
                 "pour mieux gérer votre argent",
                 style:
-                    TextStyle(fontSize: 18, color: Color.fromRGBO(18, 8, 4, 1)))
+                    TextStyle(fontSize: heightScreen * 0.025, color: Color.fromRGBO(18, 8, 4, 1)))
           ],
         )
       ],

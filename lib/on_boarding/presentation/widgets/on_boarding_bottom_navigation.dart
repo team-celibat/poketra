@@ -5,6 +5,8 @@ class OnBoardingBottomNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double widthScreen = MediaQuery.of(context).size.width;
+    double heightScreen = MediaQuery.of(context).size.height;
     return  Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -14,7 +16,7 @@ class OnBoardingBottomNavigation extends StatelessWidget {
               borderRadius: const BorderRadius.all(Radius.circular(59)),
               child:SizedBox(
                 width: 45,
-                height: 20,
+                height: heightScreen * 0.02,
                 child: Container(
                   color: Colors.black,
                 ),),
@@ -27,7 +29,7 @@ class OnBoardingBottomNavigation extends StatelessWidget {
               borderRadius: const BorderRadius.all(Radius.circular(59)),
               child:SizedBox(
                 width: 20,
-                height: 20,
+                height: heightScreen * 0.02,
                 child: Container(
                   color: Colors.black,
                 ),),
@@ -40,7 +42,7 @@ class OnBoardingBottomNavigation extends StatelessWidget {
               borderRadius: const BorderRadius.all(Radius.circular(59)),
               child:SizedBox(
                 width: 20,
-                height: 20,
+                height: heightScreen * 0.02,
                 child: Container(
                   color: Colors.black,
                 ),),
@@ -51,7 +53,7 @@ class OnBoardingBottomNavigation extends StatelessWidget {
           borderRadius: const BorderRadius.all(Radius.circular(59)),
           child: Container(
               color: const Color.fromRGBO(119, 250, 206, 1),
-              child:const IconButton(onPressed: null,color:Color.fromRGBO(119, 259, 206, 1), icon: Icon(Icons.chevron_right))
+              child:const IconButton(onPressed: null,color:Color.fromRGBO(119, 259, 206, 1), icon: Icon(Icons.chevron_right)),
           ),
         )
       ],
