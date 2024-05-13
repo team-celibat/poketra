@@ -8,23 +8,25 @@ class FirstOnBoarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double widthScreen = MediaQuery.of(context).size.width;
+    double heightScreen = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
           decoration: const BoxDecoration(
             color: Color.fromRGBO(255, 255, 119, 1),
           ),
           child: Container(
-              margin: const EdgeInsets.only(left: 15,top: 60,right: 15,bottom: 60),
-              child: const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  OnBoardingTopNavigation(),
-                  SizedBox(height: 34,),
-                  OnBoardingContent(),
-                  SizedBox(height: 34,),
-                  OnBoardingBottomNavigation()
-                ],
-              )
+              margin: EdgeInsets.only(left: 15,top: heightScreen * 0.06,right: 15,bottom: heightScreen * 0.06),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const OnBoardingTopNavigation(),
+                    SizedBox(height: heightScreen * 0.03,),
+                    const OnBoardingContent(),
+                    SizedBox(height: heightScreen * 0.03,),
+                    const OnBoardingBottomNavigation()
+                  ],
+                ),
           )
       ),
     );

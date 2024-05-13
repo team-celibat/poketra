@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:poketra/core/constants/index.dart';
 import 'package:poketra/global/widgets/scaffold_with_nested_navigation.dart';
+import 'package:poketra/on_boarding/presentation/index.dart';
 
 class AppRouter {
   //Singleton instance
@@ -23,14 +24,14 @@ class AppRouter {
     goRouter = GoRouter(
       debugLogDiagnostics: true,
       navigatorKey: generateKey('root'),
-      initialLocation: RoutePath.home,
+      initialLocation: RoutePath.onboarding,
       routes: [
         GoRoute(
             path: RoutePath.onboarding,
             pageBuilder: (BuildContext context, GoRouterState state) {
               return MaterialPage(
                   key: state.pageKey,
-                  child: const Text('Onboarding screen'));
+                  child: const FirstOnBoarding());
             }),
         GoRoute(
             path: RoutePath.auth,
