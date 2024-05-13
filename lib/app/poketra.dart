@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:poketra/core/constants/theme.dart';
 import 'package:poketra/core/route/app_router.dart';
 import 'package:poketra/on_boarding/presentation/index.dart';
 
@@ -12,7 +13,7 @@ class PoketraApp extends StatelessWidget {
       theme: ThemeData(
         //Todo: add google fonts dependencies to use roboto font
         //textTheme: GoogleFonts.robotoTextTheme(Theme.of(context).textTheme),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
+        colorScheme: colorScheme,
         useMaterial3: true,
       ),
         debugShowCheckedModeBanner: false,

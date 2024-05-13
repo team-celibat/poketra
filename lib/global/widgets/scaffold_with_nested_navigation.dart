@@ -21,6 +21,11 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
       body: SafeArea(
         child: child,
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: const Icon(Icons.add),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: child.currentIndex,
         selectedItemColor: Colors.black87,
