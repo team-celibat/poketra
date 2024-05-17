@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class OnBoardingBottomNavigation extends StatelessWidget {
-  const OnBoardingBottomNavigation({super.key});
+  const OnBoardingBottomNavigation({super.key, required this.onTap, required this.index});
 
+  final VoidCallback onTap;
+  final int index;
   @override
   Widget build(BuildContext context) {
-    double widthScreen = MediaQuery.of(context).size.width;
     double heightScreen = MediaQuery.of(context).size.height;
     return  Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -53,7 +54,9 @@ class OnBoardingBottomNavigation extends StatelessWidget {
           borderRadius: const BorderRadius.all(Radius.circular(59)),
           child: Container(
               color: const Color.fromRGBO(119, 250, 206, 1),
-              child:const IconButton(onPressed: null,color:Color.fromRGBO(119, 259, 206, 1), icon: Icon(Icons.chevron_right)),
+              child:GestureDetector(
+                  onTap: onTap,
+                  child: const IconButton(onPressed: null,color:Color.fromRGBO(119, 259, 206, 1), icon: Icon(Icons.chevron_right))),
           ),
         )
       ],
