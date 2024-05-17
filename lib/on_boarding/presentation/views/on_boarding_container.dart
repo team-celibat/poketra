@@ -18,6 +18,7 @@ class _OnBoardingContainerState extends State<OnBoardingContainer> {
       'color': secondaryColor,
       'title':'Apprener à gérer votre argent intelligement',
       'image':'assets/onboardingfirst.png',
+      'nextButtonColor': primaryColor,
       'description':'Notre application vous permet de suivre vos dépenses et de créer des budgets personnalisés pour mieux gérer votre argent',
       'skip': true
     },
@@ -25,6 +26,7 @@ class _OnBoardingContainerState extends State<OnBoardingContainer> {
       'color': accentColor,
       'title':'Initiez-vous à l’éducation financière',
       'image':'assets/onboardingsecond.png',
+      'nextButtonColor': secondaryColor,
       'description':'Découvrez des astuces pratiques et  des conseils pour encourager l\'épargne, d\'atteindre vos objectifs financiers avec succès.',
       'skip': true
     },
@@ -32,6 +34,7 @@ class _OnBoardingContainerState extends State<OnBoardingContainer> {
       'color': primaryColor,
       'title':'Obtenir des rapports de  vos dépenses facilement',
       'image':'assets/onboardinglast.png',
+      'nextButtonColor': accentColor,
       'description':'Poketra vous permet de suivre vos dépenses en détail et de générer des rapports hebdomadaires ou mensuels pour une meilleure compréhension de vos finances',
       'skip': false
     },
@@ -71,6 +74,7 @@ class _OnBoardingContainerState extends State<OnBoardingContainer> {
                 image: _pages[index]['image'],
                 title: _pages[index]['title'],
                 description: _pages[index]['description'],
+                nextButtonColor: _pages[index]['nextButtonColor'],
               );
             }),
           Positioned(
