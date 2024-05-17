@@ -10,13 +10,10 @@ class PoketraApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: AppRouter.goRouter,
-      theme: ThemeData(
-        //Todo: add google fonts dependencies to use roboto font
-        //textTheme: GoogleFonts.robotoTextTheme(Theme.of(context).textTheme),
-        colorScheme: colorScheme,
-        useMaterial3: true,
-      ),
-        debugShowCheckedModeBanner: false,
+      theme: AppThemes.lightTheme,
+      darkTheme: AppThemes.darkTheme,
+      themeMode: ThemeMode.system,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

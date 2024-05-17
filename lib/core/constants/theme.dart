@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 const textColor = Color(0xFF1d1a05);
 const backgroundColor = Color(0xFFfdfcf4);
-const primaryColor = Color(0xFFd9c827);
+const primaryColor = Color(0xFF77FFCE);
 const primaryFgColor = Color(0xFF1d1a05);
-const secondaryColor = Color(0xFF92eb8e);
+const secondaryColor = Color(0xFFFCFF77);
 const secondaryFgColor = Color(0xFF1d1a05);
-const accentColor = Color(0xFF63e395);
+const accentColor = Color(0xFF77CEFF);
 const accentFgColor = Color(0xFF1d1a05);
 
 const colorScheme = ColorScheme(
@@ -24,3 +24,13 @@ const colorScheme = ColorScheme(
   error: Brightness.light == Brightness.light ? Color(0xffB3261E) : Color(0xffF2B8B5),
   onError: Brightness.light == Brightness.light ? Color(0xffFFFFFF) : Color(0xff601410),
 );
+abstract class AppThemes {
+   static final lightTheme = ThemeData(
+        colorScheme: colorScheme,
+        useMaterial3: true,
+   );
+   static final darkTheme = ThemeData(
+     colorScheme: colorScheme,
+     useMaterial3: true,
+   );
+}

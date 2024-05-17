@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:poketra/core/constants/index.dart';
 import 'package:poketra/global/widgets/scaffold_with_nested_navigation.dart';
 import 'package:poketra/on_boarding/presentation/index.dart';
-
 class AppRouter {
   //Singleton instance
   static final AppRouter _instance = AppRouter._internal();
@@ -31,7 +30,7 @@ class AppRouter {
             pageBuilder: (BuildContext context, GoRouterState state) {
               return MaterialPage(
                   key: state.pageKey,
-                  child: const FirstOnBoarding());
+                  child:  const FirstOnBoarding());
             }),
         GoRoute(
             path: RoutePath.auth,

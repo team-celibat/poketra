@@ -23,13 +23,20 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
+        elevation: 4.0,
+        shape: RoundedRectangleBorder(
+           borderRadius: BorderRadius.circular(32),
+        ),
         onPressed: (){},
         child: const Icon(Icons.add),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
         currentIndex: child.currentIndex,
-        selectedItemColor: Colors.black87,
+        selectedItemColor: Theme.of(context).colorScheme.onBackground,
         selectedFontSize: 12,
+        enableFeedback: false,
+        elevation: 0,
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
