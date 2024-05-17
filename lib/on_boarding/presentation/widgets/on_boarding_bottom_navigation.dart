@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class OnBoardingBottomNavigation extends StatelessWidget {
-  const OnBoardingBottomNavigation({super.key, required this.onTap, required this.index});
+  const OnBoardingBottomNavigation({super.key, required this.onTap, required this.index, required this.nextButtonColor});
 
   final VoidCallback onTap;
   final int index;
+  final Color nextButtonColor;
   @override
   Widget build(BuildContext context) {
     double heightScreen = MediaQuery.of(context).size.height;
@@ -53,7 +54,7 @@ class OnBoardingBottomNavigation extends StatelessWidget {
         ClipRRect(
           borderRadius: const BorderRadius.all(Radius.circular(59)),
           child: Container(
-              color: const Color.fromRGBO(119, 250, 206, 1),
+              color: nextButtonColor,
               child:GestureDetector(
                   onTap: onTap,
                   child: const IconButton(onPressed: null,color:Color.fromRGBO(119, 259, 206, 1), icon: Icon(Icons.chevron_right))),
