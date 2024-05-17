@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class OnBoardingTopNavigation extends StatelessWidget {
-  const OnBoardingTopNavigation({super.key});
+  const OnBoardingTopNavigation({super.key, required this.skip});
+  final bool skip;
 
   @override
   Widget build(BuildContext context) {

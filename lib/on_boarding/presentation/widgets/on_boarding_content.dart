@@ -1,45 +1,77 @@
 import 'package:flutter/material.dart';
 
 class OnBoardingContent extends StatelessWidget {
-  const OnBoardingContent({super.key});
+  const OnBoardingContent({super.key, required this.image, required this.title, required this.description, required this.index});
+
+  final String image;
+  final String title;
+  final String description;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
-      double widthScreen = MediaQuery.of(context).size.width;
       double heightScreen = MediaQuery.of(context).size.height;
-    return Column(
+    return index % 2 != 0 ? Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                child: Text(
+                  title,
+                  style:
+                  TextStyle(fontSize: heightScreen * 0.05 , color: Color.fromRGBO(18, 8, 4, 1)),
+                ),
+              ),
+              SizedBox(
+                  height: heightScreen * 0.01
+              ),
+              Text(
+                  description,
+                  style:
+                  TextStyle(fontSize: heightScreen * 0.025, color: Color.fromRGBO(18, 8, 4, 1)))
+              ,SizedBox(
+                height: heightScreen * 0.02,
+              ),
+              ClipRRect(
+                child: Image.asset(
+                  image,
+                  fit: BoxFit.cover,
+                  height: heightScreen * 0.3,
+                  scale: 1,
+                ),
+              ),
+            ],
+          )
+        ],
+      ) :  Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+    ClipRRect(
+      child: Image.asset(
+          image,
+      fit: BoxFit.cover,
+      height: heightScreen * 0.3,
+      scale: 1,
+      ),
+    ),
+    SizedBox(
+      height: heightScreen * 0.02,
+    ),
+    Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ClipRRect(
-          child: Image.asset(
-            'assets/onboardingfirst.png',
-            fit: BoxFit.cover,
-            height: heightScreen * 0.3,
-            scale: 1,
-          ),
+        Container(
+          child: Text(
+                title,
+                style: TextStyle(fontSize: heightScreen * 0.05 , color: Color.fromRGBO(18, 8, 4, 1)),),),
+        SizedBox(
+          height: heightScreen * 0.01
         ),
-         SizedBox(
-          height: heightScreen * 0.02,
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              child: Text(
-                "Apprener à gérer votre argent intelligement",
-                style:
-                    TextStyle(fontSize: heightScreen * 0.05 , color: Color.fromRGBO(18, 8, 4, 1)),
-              ),
-            ),
-            SizedBox(
-                height: heightScreen * 0.01
-            ),
-            Text(
-                "Notre application vous permet de suivre "
-                "vos dépenses et de créer des budgets personnalisés "
-                "pour mieux gérer votre argent",
-                style:
-                    TextStyle(fontSize: heightScreen * 0.025, color: Color.fromRGBO(18, 8, 4, 1)))
+        Text(
+          description,
+          style: TextStyle(fontSize: heightScreen * 0.025, color: Color.fromRGBO(18, 8, 4, 1)))
           ],
         )
       ],
