@@ -7,7 +7,7 @@ class OnBoarding extends StatelessWidget {
 
   const OnBoarding(
       {
-        super.key, required this.color,   required this.skip, required this.onTab, required this.index, required this.image, required this.title, required this.description, required this.nextButtonColor,
+        super.key, required this.color,   required this.skip, required this.onTab, required this.index, required this.image, required this.title, required this.description, required this.nextButtonColor, required this.indicator,
       }
       );
 
@@ -19,6 +19,7 @@ class OnBoarding extends StatelessWidget {
   final bool skip;
   final VoidCallback onTab;
   final Color nextButtonColor;
+  final List<Widget> indicator;
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +37,7 @@ class OnBoarding extends StatelessWidget {
                     OnBoardingTopNavigation(skip: skip,),
                     SizedBox(height: heightScreen * 0.03,),
                     Expanded(child: OnBoardingContent(image: image, title: title, description: description, index: index,)),
-                    SizedBox(height: heightScreen * 0.03,),
-                    OnBoardingBottomNavigation(onTap: onTab, index: index, nextButtonColor: nextButtonColor,)
+                    OnBoardingBottomNavigation(onTap: onTab, index: index, nextButtonColor: nextButtonColor, indicator: indicator ,)
                   ],
                 ),
           )
