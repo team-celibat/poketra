@@ -67,6 +67,7 @@ class _OnBoardingContainerState extends State<OnBoardingContainer> {
             },
             itemBuilder: (context,index){
               return OnBoarding(
+                indicator: _buildIndicator(),
                 color: _pages[index]['color'],
                 index: index,
                 onTab: onNextPage,
@@ -77,18 +78,6 @@ class _OnBoardingContainerState extends State<OnBoardingContainer> {
                 nextButtonColor: _pages[index]['nextButtonColor'],
               );
             }),
-          Positioned(
-            bottom: 10,
-            left: 10,
-            child: Column(
-              children: [
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: _buildIndicator()
-                )
-              ],
-            ),
-          )
       ]),
     );
   }
