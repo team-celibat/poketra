@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poketra/core/constants/theme.dart';
 import 'package:poketra/core/route/app_router.dart';
-import 'package:poketra/on_boarding/presentation/index.dart';
+
 
 class PoketraApp extends StatelessWidget {
   const PoketraApp({super.key});

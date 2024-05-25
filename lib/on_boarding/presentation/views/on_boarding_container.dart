@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:poketra/core/constants/index.dart';
 import 'package:poketra/core/constants/theme.dart';
 
 import 'on_boarding.dart';
