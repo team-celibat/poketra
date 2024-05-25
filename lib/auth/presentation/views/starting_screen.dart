@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:poketra/global/widgets/poketra_logo.dart';
 
 class StartingScreen extends StatelessWidget {
   const StartingScreen({super.key});
@@ -7,8 +8,10 @@ class StartingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
     final TextTheme textTheme = Theme.of(context).textTheme;
-    final double screenWight = MediaQuery.of(context).size.height;
     return Scaffold(
+      appBar: AppBar(
+        title: const PoketraLogo(),
+      ),
       body: SafeArea(
         child: Container(
           color: Theme.of(context).colorScheme.background,
@@ -17,10 +20,6 @@ class StartingScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const PoketraLogo(),
-                const SizedBox(
-                  height: 24.0,
-                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 24.0),
                   child: Image.asset(
@@ -74,17 +73,7 @@ class StartingScreen extends StatelessWidget {
 }
 
 //poketra logo widget
-class PoketraLogo extends StatelessWidget {
-  const PoketraLogo({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Text('.Poketra',
-        style: TextStyle(
-            fontSize: Theme.of(context).textTheme.displaySmall?.fontSize,
-            fontWeight: FontWeight.bold));
-  }
-}
 //enums
 enum ButtonType { primary, secondary}
 
@@ -112,7 +101,7 @@ class CustomButton extends StatelessWidget {
             backgroundColor: type == ButtonType.primary ? Theme.of(context).colorScheme.primary : Colors.white ,
             foregroundColor: Theme.of(context).colorScheme.onPrimary,
             side: const BorderSide(
-               color: Colors.black12
+               color: Colors.black54
             )
           ),
           onPressed: onPressed,
