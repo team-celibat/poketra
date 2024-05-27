@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:poketra/core/constants/index.dart';
 import 'package:poketra/global/widgets/poketra_logo.dart';
 
 class StartingView extends StatelessWidget {
@@ -8,6 +10,14 @@ class StartingView extends StatelessWidget {
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
     final TextTheme textTheme = Theme.of(context).textTheme;
+
+    void goToSignupView() {
+       GoRouter.of(context).go('${RoutePath.auth}/${RoutePath.signup}');
+    }
+
+    void goToLoginView() {
+      GoRouter.of(context).go('${RoutePath.auth}/${RoutePath.login}');
+    }
     return Scaffold(
       appBar: AppBar(
         title: const PoketraLogo(),
@@ -21,18 +31,18 @@ class StartingView extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const SizedBox(
+                    height: 16,
+                  ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 24.0),
+                    padding: const EdgeInsets.symmetric(vertical: 32.0),
                     child: ClipRect(
                       child: Image.asset(
                         'assets/positive_attitude.png',
                         fit: BoxFit.cover,
-                        height: screenHeight * 0.2,
+                        height: screenHeight * 0.25,
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 16.0,
                   ),
                   Text(
                     'Commencez dès maintenant, ',
@@ -53,15 +63,15 @@ class StartingView extends StatelessWidget {
                     children: [
                       CustomButton(
                           label: "Créer un compte",
-                          onPressed: () {},
+                          onPressed: goToSignupView,
                           type: ButtonType.primary
                       ),
                       const SizedBox(
-                        height: 8,
+                        height: 12,
                       ),
                       CustomButton(
                           label: "Se connecter",
-                          onPressed: () {},
+                          onPressed: goToLoginView,
                           type: ButtonType.secondary
                       ),
                     ],
