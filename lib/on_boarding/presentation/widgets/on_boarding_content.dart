@@ -23,19 +23,15 @@ class OnBoardingContent extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    child: Text(
-                      title,
-                      style: TextStyle(
-                          fontSize: heightScreen * 0.05,
-                          color: Color.fromRGBO(18, 8, 4, 1)),
-                    ),
+                  Text(
+                    title,
+                    style: Theme.of(context).textTheme.headlineLarge,
                   ),
                   SizedBox(height: heightScreen * 0.01),
-                  Text(description,
-                      style: TextStyle(
-                          fontSize: heightScreen * 0.025,
-                          color: Color.fromRGBO(18, 8, 4, 1))),
+                  Text(
+                    description,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
                   SizedBox(
                     height: heightScreen * 0.02,
                   ),
@@ -63,26 +59,22 @@ class OnBoardingContent extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: heightScreen * 0.02,
+                height: heightScreen * 0.07,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    child: Text(
-                      title,
-                      style: TextStyle(
-                          fontSize: heightScreen * 0.05,
-                          color: Color.fromRGBO(18, 8, 4, 1)),
-                    ),
+                  Text(
+                    title,
+                    style: Theme.of(context).textTheme.headlineLarge,
                   ),
                   SizedBox(height: heightScreen * 0.01),
-                  Text(description,
-                      style: TextStyle(
-                          fontSize: heightScreen * 0.025,
-                          color: Color.fromRGBO(18, 8, 4, 1)))
+                  Text(
+                    description,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  )
                 ],
-              )
+              ),
             ],
           );
   }
