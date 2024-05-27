@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../core/constants/route_path.dart';
 
 class OnBoardingBottomNavigation extends StatelessWidget {
   const OnBoardingBottomNavigation({super.key, required this.onTap, required this.index, required this.nextButtonColor, required this.indicator});
@@ -22,7 +25,13 @@ class OnBoardingBottomNavigation extends StatelessWidget {
           child: Container(
               color: nextButtonColor,
               child:GestureDetector(
-                  onTap: onTap,
+                  onTap: (){
+                    if(index == 2){
+                      context.push(RoutePath.auth);
+                    }else{
+                      onTap();
+                    }
+                  },
                   child: const IconButton(onPressed: null,color:Color.fromRGBO(119, 259, 206, 1), icon: Icon(Icons.chevron_right))),
           ),
         )
