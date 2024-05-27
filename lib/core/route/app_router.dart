@@ -25,7 +25,7 @@ class AppRouter {
     goRouter = GoRouter(
       debugLogDiagnostics: true,
       navigatorKey: generateKey('root'),
-      initialLocation: RoutePath.auth,
+      initialLocation: RoutePath.onboarding,
       routes: [
         GoRoute(
             path: RoutePath.onboarding,
@@ -38,7 +38,7 @@ class AppRouter {
           pageBuilder: (BuildContext context, GoRouterState state) {
              return  MaterialPage(
                  key: state.pageKey,
-                 child: const StartingScreen()
+                 child: const StartingView()
              );
           },
           routes: [
