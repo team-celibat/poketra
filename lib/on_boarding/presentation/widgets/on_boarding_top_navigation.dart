@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:poketra/core/constants/index.dart';
 
 class OnBoardingTopNavigation extends StatelessWidget {
   const OnBoardingTopNavigation({super.key, required this.skip});
@@ -8,10 +10,10 @@ class OnBoardingTopNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         padding: const EdgeInsets.all(0),
-        child: const Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            const Text(
               ".Poketra",
               style: TextStyle(
                   color: Colors.black87,
@@ -19,8 +21,10 @@ class OnBoardingTopNavigation extends StatelessWidget {
                   fontSize: 35),
             ),
             TextButton(
-                onPressed: null,
-                child: Text(
+                onPressed: (){
+                  context.push(RoutePath.auth);
+                },
+                child: const Text(
                   "skip",
                   style: TextStyle(color: Colors.black54, fontSize: 20),
                 ))
