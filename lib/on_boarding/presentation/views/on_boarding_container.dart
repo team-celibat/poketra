@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:poketra/core/constants/index.dart';
@@ -18,47 +17,52 @@ class _OnBoardingContainerState extends State<OnBoardingContainer> {
   final List<Map<String, dynamic>> _pages = [
     {
       'color': secondaryColor,
-      'title':'Apprener à gérer votre argent intelligement',
-      'image':'assets/onboardingfirst.png',
+      'title': 'Apprener à gérer votre argent intelligement',
+      'image': 'assets/onboardingfirst.png',
       'nextButtonColor': primaryColor,
-      'description':'Notre application vous permet de suivre vos dépenses et de créer des budgets personnalisés pour mieux gérer votre argent',
+      'description':
+          'Notre application vous permet de suivre vos dépenses et de créer des budgets personnalisés pour mieux gérer votre argent',
       'skip': true
     },
     {
       'color': accentColor,
-      'title':'Initiez-vous à l’éducation financière',
-      'image':'assets/onboardingsecond.png',
+      'title': 'Initiez-vous à l’éducation financière',
+      'image': 'assets/onboardingsecond.png',
       'nextButtonColor': secondaryColor,
-      'description':'Découvrez des astuces pratiques et  des conseils pour encourager l\'épargne, d\'atteindre vos objectifs financiers avec succès.',
+      'description':
+          'Découvrez des astuces pratiques et  des conseils pour encourager l\'épargne, d\'atteindre vos objectifs financiers avec succès.',
       'skip': true
     },
     {
       'color': primaryColor,
-      'title':'Obtenir des rapports de  vos dépenses facilement',
-      'image':'assets/onboardinglast.png',
+      'title': 'Obtenir des rapports de  vos dépenses facilement',
+      'image': 'assets/onboardinglast.png',
       'nextButtonColor': accentColor,
-      'description':'Poketra vous permet de suivre vos dépenses en détail et de générer des rapports hebdomadaires ou mensuels pour une meilleure compréhension de vos finances',
+      'description':
+          'Poketra vous permet de suivre vos dépenses en détail et de générer des rapports hebdomadaires ou mensuels pour une meilleure compréhension de vos finances',
       'skip': false
     },
   ];
 
-  final PageController  _pageController = PageController();
+  final PageController _pageController = PageController();
   int _activePage = 0;
 
-  void onNextPage(){
-    if(_activePage  < _pages.length - 1) {
+  void onNextPage() {
+    if (_activePage < _pages.length - 1) {
       _pageController.nextPage(
         duration: const Duration(milliseconds: 500),
-        curve: Curves.fastEaseInToSlowEaseOut,);
+        curve: Curves.fastEaseInToSlowEaseOut,
+      );
+    } else {
+      GoRouter.of(context).pushReplacement(RoutePath.auth);
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          PageView.builder(
+      body: Stack(children: [
+        PageView.builder(
             controller: _pageController,
             itemCount: _pages.length,
             scrollBehavior: AppScrollBehavior(),
@@ -67,7 +71,7 @@ class _OnBoardingContainerState extends State<OnBoardingContainer> {
                 _activePage = page;
               });
             },
-            itemBuilder: (context,index){
+            itemBuilder: (context, index) {
               return OnBoarding(
                 indicator: _buildIndicator(),
                 color: _pages[index]['color'],
@@ -83,25 +87,25 @@ class _OnBoardingContainerState extends State<OnBoardingContainer> {
       ]),
     );
   }
+
   List<Widget> _buildIndicator() {
-    final indicators =  <Widget>[];
+    final indicators = <Widget>[];
 
-    for(var i = 0; i < _pages.length; i++) {
-
-      if(_activePage == i) {
+    for (var i = 0; i < _pages.length; i++) {
+      if (_activePage == i) {
         indicators.add(_indicatorsTrue());
-      }else{
+      } else {
         indicators.add(_indicatorsFalse());
       }
     }
-    return  indicators;
+    return indicators;
   }
 
   Widget _indicatorsTrue() {
     final String color;
-    if(_activePage == 0){
+    if (_activePage == 0) {
       color = '#ffe24e';
-    } else  if(_activePage ==  1) {
+    } else if (_activePage == 1) {
       color = '#a3e4f1';
     } else {
       color = '#31b77a';
@@ -132,20 +136,14 @@ class _OnBoardingContainerState extends State<OnBoardingContainer> {
     );
   }
 }
+
 class AppScrollBehavior extends MaterialScrollBehavior {
   @override
   Set<PointerDeviceKind> get dragDevices => {
-    PointerDeviceKind.touch,
-    PointerDeviceKind.mouse,
-  };
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      };
 }
-
-
-
-
-
-
-
 
 // import "package:flutter/material.dart";
 // import "package:poketra/on_boarding/presentation/index.dart";

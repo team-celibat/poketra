@@ -5,9 +5,9 @@ class PoketraLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('.Poketra',
+    return const Text('.Poketra',
         style: TextStyle(
-            fontSize: Theme.of(context).textTheme.displaySmall?.fontSize,
+            fontSize: 32,
             fontWeight: FontWeight.bold));
   }
 }

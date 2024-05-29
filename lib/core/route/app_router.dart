@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:poketra/auth/presentation/index.dart';
+import 'package:poketra/auth/presentation/views/login_view.dart';
+import 'package:poketra/auth/presentation/views/signup_view.dart';
 import 'package:poketra/core/constants/index.dart';
 import 'package:poketra/global/widgets/scaffold_with_nested_navigation.dart';
 import 'package:poketra/on_boarding/presentation/views/on_boarding_container.dart';
@@ -31,28 +33,34 @@ class AppRouter {
             path: RoutePath.onboarding,
             pageBuilder: (BuildContext context, GoRouterState state) {
               return MaterialPage(
-                  key: state.pageKey, child: const OnBoardingContainer());
+                key: state.pageKey,
+                child: const OnBoardingContainer(),
+              );
             }),
         GoRoute(
           path: RoutePath.auth,
           pageBuilder: (BuildContext context, GoRouterState state) {
-             return  MaterialPage(
-                 key: state.pageKey,
-                 child: const StartingScreen()
-             );
+            return MaterialPage(
+              key: state.pageKey,
+              child: const StartingView(),
+            );
           },
           routes: [
             GoRoute(
                 path: RoutePath.login,
                 pageBuilder: (BuildContext context, GoRouterState state) {
                   return MaterialPage(
-                      key: state.pageKey, child: const Text('Login screen'));
+                    key: state.pageKey,
+                    child: const LoginView(),
+                  );
                 }),
             GoRoute(
                 path: RoutePath.signup,
                 pageBuilder: (BuildContext context, GoRouterState state) {
                   return MaterialPage(
-                      key: state.pageKey, child: const Text('SignUp screen'));
+                    key: state.pageKey,
+                    child: const SignupView(),
+                  );
                 }),
           ],
         ),
