@@ -16,7 +16,7 @@ class SignupForm extends StatelessWidget {
         formKey.currentState!.save(); // Save the form data
         print('Password: $password'); // Print the password
         print('Email: $email');
-        print('Email: $username');
+        print('Username: $username');
       }
     }
 
@@ -52,6 +52,9 @@ class SignupForm extends StatelessWidget {
             ),
             TextFormField(
               validator: validateEmail,
+              onSaved: (value){
+                email = value!;
+              },
               decoration: const InputDecoration(
                 hintText: "Addresse email",
                 prefixIcon: Icon(
