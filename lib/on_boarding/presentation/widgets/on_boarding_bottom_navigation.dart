@@ -27,7 +27,7 @@ class OnBoardingBottomNavigation extends StatelessWidget {
               child:GestureDetector(
                   onTap: (){
                     if(index == 2){
-                      context.push(RoutePath.auth);
+                      context.pushReplacement(RoutePath.auth);
                     }else{
                       onTap();
                     }
