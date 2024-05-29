@@ -41,6 +41,7 @@ dependencies:
   get_it:
   shared_preferences:
   equatable:
+  flutter_switch: ^0.3.2
 
 
 
