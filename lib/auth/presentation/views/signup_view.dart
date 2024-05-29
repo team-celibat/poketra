@@ -55,7 +55,7 @@ class SignupView extends StatelessWidget {
                             ),
                             TextButton(
                                 onPressed: () {
-                                  context.pushReplacement(RoutePath.auth);
+                                  context.pushReplacement(RoutePath.goals);
                                 },
                                 child: Text(
                                     "Se connecter",
