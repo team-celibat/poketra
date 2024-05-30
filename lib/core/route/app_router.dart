@@ -6,6 +6,7 @@ import 'package:poketra/auth/presentation/views/signup_view.dart';
 import 'package:poketra/core/constants/index.dart';
 import 'package:poketra/global/widgets/scaffold_with_nested_navigation.dart';
 import 'package:poketra/goal/presentation/index.dart';
+import 'package:poketra/goal/presentation/views/define_goal.dart';
 import 'package:poketra/on_boarding/presentation/views/on_boarding_container.dart';
 
 class AppRouter {
@@ -36,6 +37,14 @@ class AppRouter {
               return MaterialPage(
                 key: state.pageKey,
                 child: const OnBoardingContainer(),
+              );
+            }),
+        GoRoute(
+            path: RoutePath.defineGoal,
+            pageBuilder: (BuildContext context, GoRouterState state) {
+              return MaterialPage(
+                key: state.pageKey,
+                child: const DefineGoal(),
               );
             }),
         GoRoute(
